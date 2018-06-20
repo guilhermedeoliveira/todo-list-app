@@ -3,7 +3,7 @@ import { createStackNavigator } from 'react-navigation';
 import HomeScreen from '../modules/home/HomeScreen';
 
 const Router = createStackNavigator({
-  Home: { screen: HomeScreen }
+  Home: HomeScreen
 });
 
 export default Router;
