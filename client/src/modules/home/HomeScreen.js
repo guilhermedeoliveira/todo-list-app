@@ -1,22 +1,24 @@
-import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import React, { Component } from 'react';
+import { Text } from 'react-native';
 
-const HomeScreen = () => (
-  <View style={styles.container}>
-    <Text>Open up App.js to start working on your app!</Text>
-    <Text>Changes you make will automatically reload.</Text>
-    <Text>Shake your phone to open the developer menu.</Text>
-  </View>
-);
+import { SafeContainer } from './Home.styles';
+import Header from './Header';
 
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
+class HomeScreen extends Component {
+  static navigationOptions = {
+    header: null
   }
-});
+
+  render() {
+    return (
+      <SafeContainer>
+        <Header title="My Tasks" />
+        <Text>Open up App.js to start working on your app!</Text>
+        <Text>Changes you make will automatically reload.</Text>
+        <Text>Shake your phone to open the developer menu.</Text>
+      </SafeContainer>
+    );
+  }
+}
 
 export default HomeScreen;
