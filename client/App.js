@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BackHandler } from 'react-native';
 
-import Router from './src/routes/Router';
+import Router from './src/Router';
 
 class App extends Component {
   componentDidMount() {
