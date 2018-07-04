@@ -22,6 +22,7 @@ export const isIOS = Platform.OS === 'ios';
 export default {
   colors: {
     white: '#ffffff',
+    black: '#000000',
     transparent: 'transparent'
   },
   button: {
@@ -32,7 +33,9 @@ export default {
     small: em(0.8),
     regular: em(1),
     large: em(1.3),
-    extraLarge: em(1.6)
+    extraLarge: em(1.6),
+    huge: em(2),
+    extraHuge: em(2.5)
   },
   fontWeight: {
     light: '100',
