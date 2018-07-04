@@ -1,10 +1,15 @@
 import styled from 'styled-components/native';
 
-import styles from '../../utils/Style';
+import styles, { em } from '../../utils/Style';
 
 export const SafeContainer = styled.SafeAreaView`
   flex: 1;
-  align-items: center;
-  justify-content: center;
   background-color: ${({ backgroundColor }) => backgroundColor || styles.colors.white};
+  padding-top: ${em(4)};
+  paddingHorizontal: ${em(2)};
+`;
+
+export const HeaderContainer = styled.View`
+  paddingHorizontal: ${em(1)};
+  margin-bottom: ${em(1.5)};
 `;

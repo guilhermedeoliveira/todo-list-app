@@ -1,11 +1,17 @@
 import React from 'react';
-import { Text, View } from 'react-native';
 import { string } from 'prop-types';
 
+import { HeaderContainer } from './Home.styles';
+import StyledText from '../../components/StyledText';
+
+import styles from '../../utils/Style';
+
 const Header = ({ title }) => (
-  <View>
-    <Text>{title}</Text>
-  </View>
+  <HeaderContainer>
+    <StyledText fontSize={styles.fontSize.extraHuge}>
+      {title}
+    </StyledText>
+  </HeaderContainer>
 );
 
 Header.propTypes = {

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
 
 import { SafeContainer } from './Home.styles';
 import Header from './Header';
+import Task from './Task';
+
+import tasks from './Home.data';
 
 class HomeScreen extends Component {
   static navigationOptions = {
@@ -12,10 +14,10 @@ class HomeScreen extends Component {
   render() {
     return (
       <SafeContainer>
-        <Header title="My Tasks" />
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+        <Header title="My tasks" />
+        {tasks.map((task) => (
+          <Task key={task.id} text={task.text} isChecked={task.isChecked} />
+        ))}
       </SafeContainer>
     );
   }
