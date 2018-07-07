@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import { SafeContainer } from './Home.styles';
-import Header from './Header';
+import { SafeContainer } from '../../components/shared';
+import Header from '../../components/Header';
 import Task from './Task';
 
 import tasks from './Home.data';
