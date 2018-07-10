@@ -1,46 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { shape, func } from 'prop-types';
 
-import { SafeContainer } from '../../components/shared';
-import {
-  WelcomeText,
-  SignInText,
-  SocialComponentsWrapper,
-  DoNotSyncText
-} from './Login.styles';
-import Header from '../../components/Header';
-import Social from './Social';
+import LoginContent from './LoginContent';
 
-import styles from '../../utils/Style';
+class LoginScreen extends Component {
+  static navigationOptions = {
+    header: null
+  };
 
-const LoginScreen = () => (
-  <SafeContainer>
-    <Header title="ToDo List App" />
-    <WelcomeText fontSize={styles.fontSize.large}>
-      Welcome to your To-do list App
-    </WelcomeText>
-    <SignInText fontSize={styles.fontSize.large}>
-      Please, sign in to sync your task
-    </SignInText>
-    <SocialComponentsWrapper>
-      <Social
-        iconName="facebook-official"
-        socialName="Facebook"
-        color={styles.colors.facebookColor}
-      />
-      <Social
-        iconName="google"
-        socialName="Google"
-        color={styles.colors.googleColor}
-      />
-    </SocialComponentsWrapper>
-    <DoNotSyncText fontSize={styles.fontSize.regular} onPress={() => {}} >
-      Skip, I do not want to sync my tasks
-    </DoNotSyncText>
-  </SafeContainer>
-);
+  static propTypes = {
+    navigation: shape({
+      navigate: func.isRequired
+    }).isRequired
+  };
 
-LoginScreen.navigationOptions = {
-  header: null
-};
+  navigateToHomeScreen = () => this.props.navigation.navigate('Home');
+
+  render() {
+    return <LoginContent onClickSkipText={this.navigateToHomeScreen} />;
+  }
+}
 
 export default LoginScreen;
