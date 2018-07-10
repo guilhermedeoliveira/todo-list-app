@@ -1,5 +1,5 @@
 import React from 'react';
-import { number, string } from 'prop-types';
+import { number, string, func } from 'prop-types';
 import { FontAwesome } from '@expo/vector-icons'; /* eslint-disable-line */
 
 import { SocialContainer, styledTextStyles } from './Login.styles';
@@ -11,9 +11,10 @@ const Social = ({
   iconName,
   socialName,
   color,
-  iconSize
+  iconSize,
+  onPress
 }) => (
-  <SocialContainer color={color}>
+  <SocialContainer color={color} onPress={onPress} activeOpacity={0.9}>
     <FontAwesome name={iconName} size={iconSize} color={styles.colors.white} />
     <StyledText
       fontSize={styles.fontSize.large}
@@ -29,11 +30,13 @@ Social.propTypes = {
   iconName: string.isRequired,
   socialName: string.isRequired,
   color: string.isRequired,
-  iconSize: number
+  iconSize: number,
+  onPress: func
 };
 
 Social.defaultProps = {
-  iconSize: 32
+  iconSize: 32,
+  onPress: () => {}
 };
 
 export default Social;
