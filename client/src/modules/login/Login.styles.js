@@ -1,6 +1,18 @@
 import styled from 'styled-components/native';
 
+import StyledText from '../../components/StyledText';
+
 import styles, { em } from '../../utils/Style';
+
+export const SocialComponentsWrapper = styled.View`
+  margin-top: ${em(3)};
+`;
+
+export const WelcomeText = styled(StyledText)``;
+
+export const SignInText = styled(StyledText)`
+  margin-top: ${em(2)};
+`;
 
 export const SocialContainer = styled.TouchableOpacity`
   flex-direction: row;
@@ -11,6 +23,11 @@ export const SocialContainer = styled.TouchableOpacity`
   paddingVertical: ${em(1)};
   paddingHorizontal: ${em(1)};
   margin-bottom: ${em(1)};
+`;
+
+export const DoNotSyncText = styled(StyledText)`
+  margin-top: ${em(1)};
+  align-self: flex-end;
 `;
 
 export const styledTextStyles = {
