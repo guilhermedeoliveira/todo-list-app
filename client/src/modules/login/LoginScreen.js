@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { SafeContainer } from '../../components/shared';
+import { LoginContainer } from './Login.styles';
 import Header from '../../components/Header';
 import Social from './Social';
 
@@ -9,6 +10,11 @@ import styles from '../../utils/Style';
 const LoginScreen = () => (
   <SafeContainer>
     <Header title="ToDo List App" />
+    <Social
+      iconName="facebook-official"
+      socialName="Facebook"
+      color={styles.colors.facebookColor}
+    />
     <Social
       iconName="google"
       socialName="Google"
