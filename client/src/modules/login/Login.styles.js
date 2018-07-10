@@ -10,6 +10,7 @@ export const SocialContainer = styled.TouchableOpacity`
   
   paddingVertical: ${em(1)};
   paddingHorizontal: ${em(1)};
+  margin-bottom: ${em(1)};
 `;
 
 export const styledTextStyles = {
