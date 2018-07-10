@@ -26,8 +26,10 @@ export const SocialContainer = styled.TouchableOpacity`
 `;
 
 export const DoNotSyncText = styled(StyledText)`
-  margin-top: ${em(1)};
   align-self: flex-end;
+  textDecorationLine: underline;
+
+  margin-top: ${em(1)};
 `;
 
 export const styledTextStyles = {
