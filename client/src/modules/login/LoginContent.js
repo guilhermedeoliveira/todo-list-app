@@ -1,7 +1,6 @@
 import React from 'react';
 import { func } from 'prop-types';
 
-import { SafeContainer } from '../../components/shared';
 import {
   WelcomeText,
   SignInText,
@@ -14,7 +13,7 @@ import Social from './Social';
 import styles from '../../utils/Style';
 
 const LoginContent = ({ onClickSkipText }) => (
-  <SafeContainer>
+  <React.Fragment>
     <Header title="ToDo List App" />
     <WelcomeText fontSize={styles.fontSize.large}>
       Welcome to your To-do list App
@@ -37,7 +36,7 @@ const LoginContent = ({ onClickSkipText }) => (
     <DoNotSyncText fontSize={styles.fontSize.regular} onPress={onClickSkipText} >
       Skip, I do not want to sync my tasks
     </DoNotSyncText>
-  </SafeContainer>
+  </React.Fragment>
 );
 
 LoginContent.propTypes = {

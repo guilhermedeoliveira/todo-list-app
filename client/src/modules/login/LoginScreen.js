@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { shape, func } from 'prop-types';
 
+import { SafeContainer } from '../../components/shared';
 import LoginContent from './LoginContent';
 
 class LoginScreen extends Component {
@@ -17,7 +18,11 @@ class LoginScreen extends Component {
   navigateToHomeScreen = () => this.props.navigation.navigate('Home');
 
   render() {
-    return <LoginContent onClickSkipText={this.navigateToHomeScreen} />;
+    return (
+      <SafeContainer>
+        <LoginContent onClickSkipText={this.navigateToHomeScreen} />
+      </SafeContainer>
+    );
   }
 }
 
