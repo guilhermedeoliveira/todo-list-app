@@ -1,14 +1,14 @@
 import React from 'react';
 import { func } from 'prop-types';
 
+import Header from '../../components/Header';
+import Social from './Social';
 import {
   WelcomeText,
   SignInText,
   SocialComponentsWrapper,
   DoNotSyncText
 } from './Login.styles';
-import Header from '../../components/Header';
-import Social from './Social';
 
 import styles from '../../utils/Style';
 
