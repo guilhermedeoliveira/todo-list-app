@@ -23,6 +23,7 @@ export default {
   colors: {
     white: '#ffffff',
     black: '#000000',
+    googleColor: '#dd4b39',
     transparent: 'transparent'
   },
   button: {
