@@ -2,7 +2,7 @@ import React from 'react';
 import { func } from 'prop-types';
 
 import Header from '../../components/Header';
-import Social from './Social';
+import SocialButton from './SocialButton';
 import {
   WelcomeText,
   SignInText,
@@ -22,12 +22,12 @@ const LoginContent = ({ onClickSkipText }) => (
       Please, sign in to sync your task
     </SignInText>
     <SocialComponentsWrapper>
-      <Social
+      <SocialButton
         iconName="facebook-official"
         socialName="Facebook"
         color={styles.colors.facebookColor}
       />
-      <Social
+      <SocialButton
         iconName="google"
         socialName="Google"
         color={styles.colors.googleColor}

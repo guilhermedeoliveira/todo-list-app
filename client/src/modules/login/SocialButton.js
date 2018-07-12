@@ -7,7 +7,7 @@ import StyledText from '../../components/StyledText';
 
 import styles from '../../utils/Style';
 
-const Social = ({
+const SocialButton = ({
   iconName,
   socialName,
   color,
@@ -26,7 +26,7 @@ const Social = ({
   </SocialContainer>
 );
 
-Social.propTypes = {
+SocialButton.propTypes = {
   iconName: string.isRequired,
   socialName: string.isRequired,
   color: string.isRequired,
@@ -34,9 +34,9 @@ Social.propTypes = {
   onPress: func
 };
 
-Social.defaultProps = {
+SocialButton.defaultProps = {
   iconSize: 32,
   onPress: () => {}
 };
 
-export default Social;
+export default SocialButton;
