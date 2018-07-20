@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 
 require('./models/User');
-require('./models/Todo');
+require('./models/Task');
 require('./services/passport');
 
 mongoose.Promise = global.Promise;
@@ -25,7 +25,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require('./routes/authRoutes')(app);
-require('./routes/todoRoutes')(app);
+require('./routes/taskRoutes')(app);
 
 if (['production'].includes(process.env.NODE_ENV)) {
   app.use(express.static('client/build'));
