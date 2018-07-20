@@ -7,6 +7,6 @@ const router = express.Router();
 router.get('/', authMiddleware, taskController.getAllTasks);
 router.get('/:taskId', authMiddleware, taskController.getTaskById);
 router.post('/', authMiddleware, taskController.createTask);
-router.delete('/:taskId', authMiddleware, taskController.deleteTaskById);
+router.delete('/:taskId', authMiddleware, taskController.removeTaskById);
 
 module.exports = app => app.use('/api/tasks', router);
