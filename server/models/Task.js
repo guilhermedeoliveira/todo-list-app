@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const todoSchema = new Schema({
-  text: {
+const taskSchema = new Schema({
+  name: {
     type: String,
     required: true
   },
@@ -20,4 +20,4 @@ const todoSchema = new Schema({
   }
 });
 
-mongoose.model('Todo', todoSchema);
+mongoose.model('Task', taskSchema);
