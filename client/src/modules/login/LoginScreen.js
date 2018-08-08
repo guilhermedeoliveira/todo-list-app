@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { shape, func } from 'prop-types';
 
 import { SafeContainer } from '../../components/shared';
-import LoginContent from './LoginContent';
+import LoginForm from './LoginForm';
 
 class LoginScreen extends Component {
   static navigationOptions = {
@@ -15,12 +15,14 @@ class LoginScreen extends Component {
     }).isRequired
   };
 
+  onSubmitFormLogin = () => {}
+
   navigateToHomeScreen = () => this.props.navigation.navigate('Home');
 
   render() {
     return (
       <SafeContainer>
-        <LoginContent onClickSkipText={this.navigateToHomeScreen} />
+        <LoginForm onSubmitForm={this.onSubmitFormLogin} />
       </SafeContainer>
     );
   }
