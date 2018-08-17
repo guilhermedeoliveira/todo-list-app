@@ -54,7 +54,7 @@
     ],
     "arrow-parens": [
     2,
-    "always"
+    "as-needed", { "requireForBlockBody": true }
     ]
 },
 "globals": {
