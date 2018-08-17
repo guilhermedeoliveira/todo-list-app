@@ -2,6 +2,8 @@ import styled from 'styled-components/native';
 
 import styles, { em } from '../utils/Style';
 
+export const WrapperScreen = styled.ScrollView``;
+
 export const SafeContainer = styled.SafeAreaView`
   flex: 1;
   background-color: ${({ backgroundColor }) => backgroundColor || styles.colors.white};
