@@ -1,23 +1,30 @@
 import React from 'react';
-import { string, bool } from 'prop-types';
+import { shape, string, bool, func } from 'prop-types';
 
 import { CheckBox } from 'react-native-elements';
 
-const Task = ({ text, isChecked }) => (
+const Task = ({
+  task: { id, text, isChecked }, onPressTask
+}) => (
   <CheckBox
     title={text}
     checked={isChecked}
     checkedColor="green"
+    onPress={() => onPressTask(id)}
   />
 );
 
 Task.propTypes = {
-  text: string.isRequired,
-  isChecked: bool
+  task: shape({
+    id: string.isRequired,
+    text: string.isRequired,
+    isChecked: bool.isRequired
+  }).isRequired,
+  onPressTask: func
 };
 
 Task.defaultProps = {
-  isChecked: true
+  onPressTask: () => {}
 };
 
 export default Task;

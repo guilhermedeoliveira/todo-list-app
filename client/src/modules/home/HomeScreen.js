@@ -11,12 +11,31 @@ class HomeScreen extends Component {
     header: null
   }
 
+  state = {
+    tasks
+  }
+
+  onPressTask = (taskId) =>
+    this.setState((prevState) => ({
+      tasks: prevState.tasks.map((task) => {
+        if (task.id === taskId) {
+          return { ...task, isChecked: !task.isChecked };
+        }
+
+        return task;
+      })
+    }));
+
   render() {
     return (
       <SafeContainer>
         <Header title="My tasks" />
-        {tasks.map((task) => (
-          <Task key={task.id} text={task.text} isChecked={task.isChecked} />
+        {this.state.tasks.map((task) => (
+          <Task
+            key={task.id}
+            task={task}
+            onPressTask={this.onPressTask}
+          />
         ))}
       </SafeContainer>
     );
