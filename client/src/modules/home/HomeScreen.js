@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 
 import { SafeContainer } from '../../components/shared';
 import Header from '../../components/Header';
-import Task from '../task/Task';
+import TaskList from '../task/TaskList';
 
 import tasks from './Home.data';
+import { filterTaskList } from '../../utils/helpers/array';
 
 class HomeScreen extends Component {
   static navigationOptions = {
@@ -15,8 +16,8 @@ class HomeScreen extends Component {
     tasks
   }
 
-  onPressTask = (taskId) =>
-    this.setState((prevState) => ({
+  onPressTask = taskId =>
+    this.setState(prevState => ({
       tasks: prevState.tasks.map((task) => {
         if (task.id === taskId) {
           return { ...task, isChecked: !task.isChecked };
@@ -27,16 +28,21 @@ class HomeScreen extends Component {
     }));
 
   render() {
+    const { tasks } = this.state;
+
     return (
       <SafeContainer>
         <Header title="My tasks" />
-        {this.state.tasks.map((task) => (
-          <Task
-            key={task.id}
-            task={task}
-            onPressTask={this.onPressTask}
-          />
-        ))}
+
+        <TaskList
+          tasks={filterTaskList(tasks, false)}
+          onPressTask={this.onPressTask}
+        />
+
+        <TaskList
+          tasks={filterTaskList(tasks, true)}
+          onPressTask={this.onPressTask}
+        />
       </SafeContainer>
     );
   }

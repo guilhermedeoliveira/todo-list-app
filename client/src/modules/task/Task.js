@@ -1,10 +1,10 @@
 import React from 'react';
-import { shape, string, bool, func } from 'prop-types';
+import { string, bool, func } from 'prop-types';
 
 import { CheckBox } from 'react-native-elements';
 
 const Task = ({
-  task: { id, text, isChecked }, onPressTask
+  id, text, isChecked, onPressTask
 }) => (
   <CheckBox
     title={text}
@@ -15,11 +15,9 @@ const Task = ({
 );
 
 Task.propTypes = {
-  task: shape({
-    id: string.isRequired,
-    text: string.isRequired,
-    isChecked: bool.isRequired
-  }).isRequired,
+  id: string.isRequired,
+  text: string.isRequired,
+  isChecked: bool.isRequired,
   onPressTask: func
 };
 
