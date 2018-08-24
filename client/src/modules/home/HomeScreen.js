@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { SafeContainer } from '../../components/shared';
 import Header from '../../components/Header';
 import TaskList from '../task/TaskList';
+import { DoneTasksContainer } from './Home.styles';
 
 import tasks from './Home.data';
 import { filterTaskList } from '../../utils/helpers/array';
@@ -39,10 +40,12 @@ class HomeScreen extends Component {
           onPressTask={this.onPressTask}
         />
 
-        <TaskList
-          tasks={filterTaskList(tasks, true)}
-          onPressTask={this.onPressTask}
-        />
+        <DoneTasksContainer>
+          <TaskList
+            tasks={filterTaskList(tasks, true)}
+            onPressTask={this.onPressTask}
+          />
+        </DoneTasksContainer>
       </SafeContainer>
     );
   }
