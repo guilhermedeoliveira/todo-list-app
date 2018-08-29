@@ -6,7 +6,7 @@ import TaskList from '../task/TaskList';
 import DoneTasksToggle from './DoneTasksToggle';
 
 import tasks from './Home.data';
-import { filterTaskList } from '../../utils/helpers/array';
+import { filterTaskList, getfilteredListLenght } from '../../utils/helpers/array';
 
 class HomeScreen extends Component {
   static navigationOptions = {
@@ -36,7 +36,6 @@ class HomeScreen extends Component {
 
   render() {
     const { tasks, isShowingDoneTasks } = this.state;
-    console.log('state', this.state);
 
     return (
       <SafeContainer>
@@ -50,6 +49,7 @@ class HomeScreen extends Component {
         <DoneTasksToggle
           onToggleDoneTasks={this.onToggleDoneTasks}
           isShowingDoneTasks={isShowingDoneTasks}
+          numberOfDoneTasks={getfilteredListLenght(tasks, true)}
         />
 
         {isShowingDoneTasks && (
