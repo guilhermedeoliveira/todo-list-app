@@ -1,4 +1,5 @@
 import React from 'react';
+import { func, bool } from 'prop-types';
 
 import { DoneTasksTouchable } from './Home.styles';
 import StyledText from '../../components/StyledText';
@@ -12,5 +13,15 @@ const DoneTasksToggle = ({ onToggleDoneTasks, isShowingDoneTasks }) => (
     </StyledText>
   </DoneTasksTouchable>
 );
+
+DoneTasksToggle.propTypes = {
+  onToggleDoneTasks: func,
+  isShowingDoneTasks: bool
+};
+
+DoneTasksToggle.defaultProps = {
+  onToggleDoneTasks: () => {},
+  isShowingDoneTasks: false
+};
 
 export default DoneTasksToggle;
