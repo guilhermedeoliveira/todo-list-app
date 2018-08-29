@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { SafeContainer } from '../../components/shared';
 import Header from '../../components/Header';
 import TaskList from '../task/TaskList';
-import { DoneTasksContainer } from './Home.styles';
+import DoneTasksContainer from './DoneTasksContainer';
 
 import tasks from './Home.data';
 import { filterTaskList } from '../../utils/helpers/array';
@@ -14,7 +14,14 @@ class HomeScreen extends Component {
   }
 
   state = {
-    tasks
+    tasks,
+    isShowingDoneTasks: false
+  }
+
+  onToggleDoneTasks = () => {
+    this.setState(prevState => ({
+      isShowingDoneTasks: !prevState.isShowingDoneTasks
+    }));
   }
 
   onPressTask = taskId =>
@@ -29,7 +36,8 @@ class HomeScreen extends Component {
     }));
 
   render() {
-    const { tasks } = this.state;
+    const { tasks, isShowingDoneTasks } = this.state;
+    console.log('state', this.state);
 
     return (
       <SafeContainer>
@@ -40,11 +48,13 @@ class HomeScreen extends Component {
           onPressTask={this.onPressTask}
         />
 
-        <DoneTasksContainer>
-          <TaskList
+        <DoneTasksContainer
+          onPressDoneTasks={this.onToggleDoneTasks}
+        >
+          {isShowingDoneTasks && <TaskList
             tasks={filterTaskList(tasks, true)}
             onPressTask={this.onPressTask}
-          />
+          />}
         </DoneTasksContainer>
       </SafeContainer>
     );
