@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 import styles, { em } from '../utils/Style';
 
-export const WrapperScreen = styled.ScrollView``;
+export const ScreenWrapper = styled.ScrollView``;
 
 export const SafeContainer = styled.SafeAreaView`
   flex: 1;
@@ -12,12 +12,13 @@ export const SafeContainer = styled.SafeAreaView`
 `;
 
 export const HeaderContainer = styled.View`
-  paddingHorizontal: ${em(1)};
-  margin-bottom: ${em(1.5)};
+  margin-vertical: ${em(1)};
+  padding-horizontal: ${em(1)};
 `;
 
 export const SearchBar = styled.TextInput`
   font-size: ${styles.fontSize.large};
+  padding-vertical: ${em(0.5)};
   padding-horizontal: ${em(1)};
   background-color: ${styles.colors.white};
 
