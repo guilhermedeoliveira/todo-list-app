@@ -8,7 +8,7 @@ import styles from '../utils/Style';
 
 const Header = ({ title }) => (
   <HeaderContainer>
-    <StyledText fontSize={styles.fontSize.extraHuge}>
+    <StyledText fontSize={styles.fontSize.huge}>
       {title}
     </StyledText>
   </HeaderContainer>
