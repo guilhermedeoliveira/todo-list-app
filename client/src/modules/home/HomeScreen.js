@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { SafeContainer } from '../../components/shared';
+import { SafeContainer, SearchBar } from '../../components/shared';
 import Header from '../../components/Header';
 import TaskList from '../task/TaskList';
 import DoneTasksToggle from './DoneTasksToggle';
@@ -14,6 +14,7 @@ class HomeScreen extends Component {
   }
 
   state = {
+    searchBarValue: '',
     tasks,
     isShowingDoneTasks: false
   }
@@ -35,11 +36,18 @@ class HomeScreen extends Component {
     }));
 
   render() {
-    const { tasks, isShowingDoneTasks } = this.state;
+    const { searchBarValue, tasks, isShowingDoneTasks } = this.state;
 
     return (
       <SafeContainer>
         <Header title="My tasks" />
+
+        <SearchBar
+          value={searchBarValue}
+          placeholder="Create task"
+          onChangeText={q => this.updateSearch(q)}
+          onSubmitEditing={this.onSubmit}
+        />
 
         <TaskList
           tasks={filterTaskList(tasks, false)}

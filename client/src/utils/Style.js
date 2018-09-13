@@ -22,6 +22,7 @@ export const isIOS = Platform.OS === 'ios';
 export default {
   colors: {
     white: '#ffffff',
+    gray: '#d3d3d3',
     black: '#000000',
     facebookColor: '#3b5998',
     googleColor: '#dd4b39',
