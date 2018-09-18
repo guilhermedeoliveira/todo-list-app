@@ -8,7 +8,7 @@ export const SafeContainer = styled.SafeAreaView`
   flex: 1;
   background-color: ${({ backgroundColor }) => backgroundColor || styles.colors.white};
   padding-top: ${em(4)};
-  paddingHorizontal: ${em(2)};
+  padding-horizontal: ${em(2)};
 `;
 
 export const HeaderContainer = styled.View`
@@ -24,4 +24,18 @@ export const SearchBar = styled.TextInput`
 
   border-width: 1.5;
   border-color: ${styles.colors.gray};
+`;
+
+// Texts
+
+export const StyledText = styled.Text`
+  color: ${({ color }) => color || styles.colors.black};
+  font-size: ${({ fontSize }) => fontSize || styles.fontSize.regular};
+`;
+
+export const TextNavigate = styled(StyledText)`
+  align-self: flex-start;
+  text-decoration-line: underline;
+
+  margin-top: ${em(1)};
 `;
