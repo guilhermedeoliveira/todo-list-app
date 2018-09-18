@@ -1,8 +1,7 @@
 import React from 'react';
 import { string } from 'prop-types';
 
-import { HeaderContainer } from './shared';
-import StyledText from './StyledText';
+import { HeaderContainer, StyledText } from './shared';
 
 import styles from '../utils/Style';
 

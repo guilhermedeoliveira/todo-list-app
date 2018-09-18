@@ -2,7 +2,7 @@ import React from 'react';
 import { func, bool, number } from 'prop-types';
 
 import { DoneTasksTouchable, doneTasksTextStyle } from './Home.styles';
-import StyledText from '../../components/StyledText';
+import { StyledText } from '../../components/shared';
 
 import styles from '../../utils/Style';
 
