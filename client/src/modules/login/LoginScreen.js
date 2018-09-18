@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { shape, func } from 'prop-types';
 
-import { SafeContainer } from '../../components/shared';
+import { SafeContainer, TextNavigate } from '../../components/shared';
 import LoginForm from './LoginForm';
-import { GoToSignupText } from '../login/Login.styles';
 
 class LoginScreen extends Component {
   static navigationOptions = {
@@ -18,15 +17,15 @@ class LoginScreen extends Component {
 
   onSubmitFormLogin = () => {}
 
-  navigateToHomeScreen = () => this.props.navigation.navigate('Home');
+  navigateToSignupScreen = () => this.props.navigation.navigate('Signup');
 
   render() {
     return (
       <SafeContainer>
         <LoginForm onSubmitForm={this.onSubmitFormLogin} />
-        <GoToSignupText onPress={this.navigateToHomeScreen}>
+        <TextNavigate onPress={this.navigateToSignupScreen}>
           Create Account
-        </GoToSignupText>
+        </TextNavigate>
       </SafeContainer>
     );
   }

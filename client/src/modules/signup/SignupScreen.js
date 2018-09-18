@@ -17,14 +17,14 @@ class SignupScreen extends Component {
 
   onSubmitFormLogin = () => {}
 
-  navigateToHomeScreen = () => this.props.navigation.navigate('Home');
+  navigateToLoginScreen = () => this.props.navigation.navigate('Login');
 
   render() {
     return (
       <SafeContainer>
         <SignupForm onSubmitForm={this.onSubmitFormLogin} />
-        <TextNavigate onPress={this.navigateToHomeScreen}>
-          Create Account
+        <TextNavigate onPress={this.navigateToLoginScreen}>
+          Go Back To Login
         </TextNavigate>
       </SafeContainer>
     );
