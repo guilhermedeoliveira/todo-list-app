@@ -40,7 +40,7 @@ const FormikForm = ({
     <Button
       backgroundColor="blue"
       buttonStyle={{ marginTop: 20, width: '100%' }}
-      title="ENTRAR"
+      title="ENTER"
       onPress={handleSubmit}
       disabled={!isValid || isSubmitting}
       loading={isSubmitting}
