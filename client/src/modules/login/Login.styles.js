@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-import StyledText from '../../components/StyledText';
+import { StyledText } from '../../components/shared';
 
 import styles, { em } from '../../utils/Style';
 
@@ -20,16 +20,9 @@ export const SocialContainer = styled.TouchableOpacity`
   border-radius: 5;
   background-color: ${({ color }) => color || styles.colors.white};
   
-  paddingVertical: ${em(1)};
-  paddingHorizontal: ${em(1)};
+  padding-vertical: ${em(1)};
+  padding-horizontal: ${em(1)};
   margin-bottom: ${em(1)};
-`;
-
-export const DoNotSyncText = styled(StyledText)`
-  align-self: flex-end;
-  textDecorationLine: underline;
-
-  margin-top: ${em(1)};
 `;
 
 export const styledTextStyles = {

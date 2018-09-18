@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { shape, func } from 'prop-types';
 
-import { SafeContainer } from '../../components/shared';
+import { SafeContainer, TextNavigate } from '../../components/shared';
 import SignupForm from './SignupForm';
-import { GoToSignupText } from '../login/Login.styles';
 
 class SignupScreen extends Component {
   static navigationOptions = {
@@ -24,9 +23,9 @@ class SignupScreen extends Component {
     return (
       <SafeContainer>
         <SignupForm onSubmitForm={this.onSubmitFormLogin} />
-        <GoToSignupText onPress={this.navigateToHomeScreen}>
+        <TextNavigate onPress={this.navigateToHomeScreen}>
           Create Account
-        </GoToSignupText>
+        </TextNavigate>
       </SafeContainer>
     );
   }
