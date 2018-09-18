@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { shape, func } from 'prop-types';
 
 import { SafeContainer, TextNavigate } from '../../components/shared';
+import Header from '../../components/Header';
 import SignupForm from './SignupForm';
 
 class SignupScreen extends Component {
@@ -22,6 +23,7 @@ class SignupScreen extends Component {
   render() {
     return (
       <SafeContainer>
+        <Header title="Signup" />
         <SignupForm onSubmitForm={this.onSubmitFormLogin} />
         <TextNavigate onPress={this.navigateToLoginScreen}>
           Go Back To Login
