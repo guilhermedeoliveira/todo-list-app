@@ -50,7 +50,7 @@ const signin = async (req, res) => {
 
 const getCurrentUser = (req, res) => res.send(req.user);
 
-const googleOAuth = (req, res) => res.redirect('/blogs');
+// const googleOAuth = (req, res) => res.redirect('/blogs');
 
 const logout = (req, res) => {
   req.logout();
@@ -62,6 +62,6 @@ module.exports = {
   signup,
   signin,
   getCurrentUser,
-  googleOAuth,
+  // googleOAuth,
   logout
 };
