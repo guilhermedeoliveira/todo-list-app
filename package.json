@@ -1,17 +1,14 @@
 {
-  "name": "server",
+  "name": "todo-list-api",
   "version": "1.0.0",
   "engines": {
     "node": "10.6.0"
   },
-  "description": "",
+  "description": "Api developed for a todo list mobile app",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "server": "nodemon index.js --ignore tests",
-    "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "npm run build"
+    "server": "nodemon index.js --ignore tests"
   },
   "author": "",
   "license": "ISC",
