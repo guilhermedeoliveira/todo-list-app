@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = '';
+const API_URL = 'https://todo-list-node-api.herokuapp.com';
 
 const API = axios.create({
   baseURL: API_URL
